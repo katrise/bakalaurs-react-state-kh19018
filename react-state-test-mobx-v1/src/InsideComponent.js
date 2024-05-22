@@ -6,7 +6,7 @@ import textStore from './store';
 //komponentes izveide ar observer funkciju
 const InsideComponent = observer(() => (
   <div>
-    <h2>{textStore.text}</h2> {/* Stāvokļa vērtības nolasīšana */}
+    <h2>{textStore.text}</h2> {/* Stāvokļa vērtības attēlošana*/}
     {/* uz peles klikšķa tiek izsaukta stāvokļa izmaiņu funkcija, 
     kura šajā gadījumā parāda iestatīto tekstu */}
     <button onClick={() => textStore.showText()}>Komponentes iekšpusē</button>
