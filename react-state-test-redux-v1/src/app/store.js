@@ -1,11 +1,11 @@
-//rīka importācija noliktavas vieglākai pārvaldībai
-import { configureStore } from '@reduxjs/toolkit'
-//reducenta funkcijas importācija priekš sasaistes
-import showText from '../slice'
-//noliktavas izveide
+import { configureStore } from '@reduxjs/toolkit';
+//importē segmentu, lai savienotu metodes ar atslēgu
+import listSlice from '../slice';
+
 export default configureStore({
-    reducer: {
-        //atslēgas 'texts' sasaiste ar reducenta funkciju
-        texts: showText,
-    },
-})
+  reducer: {
+    //atslēga tiek savienota ar 'listSlice' reducenta loģiku, jo eksportā
+    //kā noklusējums tika padotas reducenta funkcijas
+    list: listSlice,
+  },
+});
