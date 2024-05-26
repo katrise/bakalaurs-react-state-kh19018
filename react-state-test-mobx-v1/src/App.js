@@ -1,18 +1,15 @@
-import './App.css'
-//Izveidoto komponenšu importēšana
-import InsideComponent from './InsideComponent'
-import OutsideComponent from './OutsideComponent'
-//Pamata komponentes 'App' izveide
+import './App.css';
+//komponentes importēšana
+import ItemList from './ItemList';
+
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* Iekšējās un ārējās komponentes izsaukšana */}
-        <InsideComponent />
-        <OutsideComponent />
-      </header>
+    <div className='App App-header'>
+      <h1>List of Items</h1>
+      <ItemList /> {/* komponentes atrašānās vieta */}
     </div>
-  );
+  )
 }
 
 export default App;
