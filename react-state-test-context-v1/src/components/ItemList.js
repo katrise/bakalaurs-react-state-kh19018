@@ -10,7 +10,7 @@ function ItemList () {
       <h2>Items</h2>
       <ul>
         {/* Iterē cauri stāvokļa satura sarakstam ar funkciju map katram ierakstam
-        pievienojo identificējošu atslēgu un pārraiddot tā vērtību */}
+        pievienojo identificējošu atslēgu un izveidojot tā saraksta vienību*/}
         {state.items.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
