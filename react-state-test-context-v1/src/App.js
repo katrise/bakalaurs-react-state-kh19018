@@ -1,24 +1,22 @@
-//Tiek veikta nepiecciešamo failu importācija (iepriekš izveidotie faili) kā arī
-//nepieciešamie rīki kā useState,
-import './App.css';
-import { useState } from "react";
-import { ContextBase } from "./ContextBase";
-import ComponentBase from "./ComponentBase";
-import RogueComponent from './RogueComponent';
+import './App.css'
+//Stāvokļa piegādes komponentes imports
+import { StateProvider } from "./ContextBase"
+//satura komponenšu imports
+import  AddItem   from './components/AddItem'
+import ItemList from "./components/ItemList"
 
 function App() {
-  //Tiek izveidots stāvoklis, kurš veiks stāvokļa informācijas uzglabāšanu
-  const [text, setText] = useState("");
 
   return (
     <div className="App App-header">
-      {/* Tiek ievietots konteksta sniedzējs un tā vērtības, kurām iespējams piekļūt iekšējām komponentēm*/}
-      <ContextBase.Provider value={{ text, setText}}>
-        {/* Šeit atrodas bāes komponente - iekšā konteksta sniedzēja birkā */}
-        <ComponentBase />
-      </ContextBase.Provider>
-      {/* Šeit atrodas ārējā komponente */}
-      <RogueComponent />
+      {/* piegaādes komponente */}
+      <StateProvider>
+        <h1>Heavy state app</h1>
+        {/* satura komponentes */}
+        <AddItem />
+        <ItemList />
+      </StateProvider>
+
     </div>
   );
 }
