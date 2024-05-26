@@ -1,18 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-import store from './app/store';
 import { Provider } from 'react-redux';
-import InsideComponent from './InsideComponent';
-import OutsideComponent from './OutsideComponent';
+//importējam noliktavu, lai tai var nodrošināt piekļuvi
+import store from './app/store';
+//importējam attēlojamo komponenti
+import ItemList from './TheList';
+import './App.css';
 
 function App() {
   return (
-    <div className="App App-header">
-      <Provider store={store}>
-       <InsideComponent /> 
-      </Provider>
-      {/* <OutsideComponent /> */}
-    </div>
+      <div className="App App-header">
+          <Provider store={store}>  {/* piegādātājs nodrošina piekļuvi 'store' saturam */}
+          <h1>The list:</h1>
+          <ItemList />  {/*  attēlotā komponente */}
+        </Provider>
+      </div>
   );
 }
 
